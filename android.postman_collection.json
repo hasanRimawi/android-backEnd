@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "e9c7cffb-5f1f-4160-88cc-10e1fd6f6bc7",
+		"name": "android",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25419267"
+	},
+	"item": [
+		{
+			"name": "addEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Hasan",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Alrimawi",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "0595894897",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "hasan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "passowrd",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addEmployee.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addEmployee.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticateEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "hasan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "passowrd",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/authenticateEmployee.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"authenticateEmployee.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMedicine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "paracetamol",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Pain Killers",
+							"type": "text"
+						},
+						{
+							"key": "expiryDate",
+							"value": "2024-09-24",
+							"type": "text"
+						},
+						{
+							"key": "prescription",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "routeOfAdministration",
+							"value": "Oral",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addMedicine.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addMedicine.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMedicineById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:80/pharmacy/getMedicineById.php?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getMedicineById.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Medicines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getMedicines.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getMedicines.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
