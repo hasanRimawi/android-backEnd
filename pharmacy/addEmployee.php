@@ -25,6 +25,7 @@
 		if ($conn->query($sql) === TRUE) {
 			$response['error'] = false;
 			$response['message'] = "employee added successfully!";
+			$response['employeeId'] = $conn->insert_id;
 		} else {
 			$response['error'] = true;
 			$response['message'] = "Error, " . $conn->error;
