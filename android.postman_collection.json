@@ -102,6 +102,170 @@
 			"response": []
 		},
 		{
+			"name": "getEmployeeById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getEmployeeById.php?id=10",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getEmployeeById.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addClient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "baraw",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "jabali",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "05958948123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "barwa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "passowrd",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addClient.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addClient.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticateClient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "hasa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "passowrd",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/authenticateClient.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"authenticateClient.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClientById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getClientById.php?id=4",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getClientById.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getClients.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getClients.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "addMedicine",
 			"request": {
 				"method": "POST",
@@ -211,6 +375,397 @@
 					"path": [
 						"pharmacy",
 						"getMedicines.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "clientId",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "dateOfOrder",
+							"value": "2023-07-07",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addOrder.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getOrderById.php?id=7",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getOrderById.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrdersOfClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getOrdersOfClient.php?clientId=4",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getOrdersOfClient.php"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:80/pharmacy/getAllOrders.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getAllOrders.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "attachEmptoOrderReady",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "orderId",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "employeeId",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/attachEmptoOrderReady.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"attachEmptoOrderReady.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "medicineId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addStock.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addStock.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStockByMedicineId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/getStockByMedicineId.php?medicineId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getStockByMedicineId.php"
+					],
+					"query": [
+						{
+							"key": "medicineId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStockQuantity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "stockId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "newStockQuantity",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/updateStockQuantity.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"updateStockQuantity.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProductOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "medicineId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "orderId",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "sumPrice",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/addProductOrder.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"addProductOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProductOrderByOrderId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "orderId",
+							"value": "7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/getProductOrderByOrderId.php?orderId=7",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"getProductOrderByOrderId.php"
+					],
+					"query": [
+						{
+							"key": "medicineId",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "orderId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProductOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/deleteProductOrder.php?productOrderId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"deleteProductOrder.php"
+					],
+					"query": [
+						{
+							"key": "productOrderId",
+							"value": "2"
+						}
 					]
 				}
 			},
