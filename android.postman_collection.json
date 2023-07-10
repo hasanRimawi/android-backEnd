@@ -62,46 +62,6 @@
 			"response": []
 		},
 		{
-			"name": "authenticateEmployee",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "hasan@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "passowrd",
-							"value": "1234",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "localhost:80/pharmacy/authenticateEmployee.php",
-					"host": [
-						"localhost"
-					],
-					"port": "80",
-					"path": [
-						"pharmacy",
-						"authenticateEmployee.php"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "getEmployeeById",
 			"request": {
 				"method": "GET",
@@ -157,7 +117,7 @@
 						},
 						{
 							"key": "email",
-							"value": "barwa@gmail.com",
+							"value": "barwaa@gmail.com",
 							"type": "text"
 						},
 						{
@@ -182,7 +142,7 @@
 			"response": []
 		},
 		{
-			"name": "authenticateClient",
+			"name": "authenticateUser",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -208,14 +168,14 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:80/pharmacy/authenticateClient.php",
+					"raw": "localhost:80/pharmacy/authenticateUser.php",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
 						"pharmacy",
-						"authenticateClient.php"
+						"authenticateUser.php"
 					]
 				}
 			},
@@ -766,6 +726,58 @@
 							"key": "productOrderId",
 							"value": "2"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categorized order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/categorizedOrder.php?category=Pain Killers&startingDate=2022-05-23&endingDate=2024-07-23",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"categorizedOrder.php"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Pain Killers"
+						},
+						{
+							"key": "startingDate",
+							"value": "2022-05-23"
+						},
+						{
+							"key": "endingDate",
+							"value": "2024-07-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employeeMainView",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/employeeMainView.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"employeeMainView.php"
 					]
 				}
 			},
