@@ -1,9 +1,8 @@
 <?php
 
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // Get data
-    $stockId = isset($_POST['stockId']) ? $_POST['stockId'] : "";
+    $stockId = isset($_POST['medicineId']) ? $_POST['medicineId'] : "";
     $newStockQuantity = isset($_POST['newStockQuantity']) ? $_POST['newStockQuantity'] : "";
 
     $server_name = "localhost";
@@ -17,20 +16,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "update stock SET quantity = '" . $newStockQuantity . "' WHERE id = '" . $stockId . "'";
-    if ($conn->query($sql) === TRUE) {
+    $sql = "UPDATE stock s
+            SET quantity = CASE
+                WHEN ? >= 0 THEN quantity + ?
+                ELSE quantity - ABS(?)
+                END
+            WHERE s.medicineId = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iiii", $newStockQuantity, $newStockQuantity, $newStockQuantity, $stockId);
+
+    if ($stmt->execute()) {
         $response['error'] = false;
-        $response['message'] = "stock updated successfully!";
+        $response['message'] = "Stock updated successfully!";
     } else {
         $response['error'] = true;
-        $response['message'] = "Error, " . $conn->error;
-
+        $response['message'] = "Error: " . $stmt->error;
     }
+
+    $stmt->close();
+
     echo json_encode($response);
 
     $conn->close();
-
 }
-
-
 ?>

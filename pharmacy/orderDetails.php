@@ -14,12 +14,11 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		} 
-        $sql = "SELECT m.name, m.image, p.quantity, m.price
+        $sql = "SELECT m.name, m.image, p.quantity, m.price, m.id
         FROM medicine m, ordertable o, productorder p
         WHERE o.id = '" . $id . "'
           AND p.orderId = '" . $id . "'
           AND p.medicineId = m.id
-        GROUP BY o.id
         ORDER BY o.id";
     $result = $conn->query($sql);
     $resultarray = array();

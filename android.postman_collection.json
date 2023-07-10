@@ -361,7 +361,7 @@
 						},
 						{
 							"key": "dateOfOrder",
-							"value": "2023-07-07",
+							"value": "2023-07-10",
 							"type": "text"
 						},
 						{
@@ -517,7 +517,7 @@
 					"urlencoded": [
 						{
 							"key": "medicineId",
-							"value": "1",
+							"value": "2",
 							"type": "text"
 						},
 						{
@@ -543,9 +543,16 @@
 		},
 		{
 			"name": "getStockByMedicineId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:80/pharmacy/getStockByMedicineId.php?medicineId=1",
 					"host": [
@@ -581,13 +588,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "stockId",
-							"value": "1",
+							"key": "medicineId",
+							"value": "2",
 							"type": "text"
 						},
 						{
 							"key": "newStockQuantity",
-							"value": "20",
+							"value": "-5",
 							"type": "text"
 						}
 					]
@@ -627,17 +634,17 @@
 						},
 						{
 							"key": "orderId",
-							"value": "7",
+							"value": "10",
 							"type": "text"
 						},
 						{
 							"key": "quantity",
-							"value": "5",
+							"value": "200",
 							"type": "text"
 						},
 						{
 							"key": "sumPrice",
-							"value": "20",
+							"value": "80",
 							"type": "text"
 						}
 					]
@@ -844,7 +851,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:80/pharmacy/orderDetails.php?orderId=10",
+					"raw": "localhost:80/pharmacy/orderDetails.php?orderId=7",
 					"host": [
 						"localhost"
 					],
@@ -856,7 +863,7 @@
 					"query": [
 						{
 							"key": "orderId",
-							"value": "10"
+							"value": "7"
 						}
 					]
 				}
