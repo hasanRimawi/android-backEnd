@@ -16,14 +16,12 @@
 		$sql = "select * from stock m where m.medicineId = '" . $id . "'" ;
 		
 		$result = $conn->query($sql);
-		$resultarray = array();
-		while($row =mysqli_fetch_assoc($result))
-		{
-			$resultarray[] = $row;
-		}
-		echo json_encode($resultarray);
-		
-		$conn->close();
+        $row = mysqli_fetch_assoc($result);
+        $resultobject = (object) $row;
+        
+        echo json_encode($resultobject);
+        
+        $conn->close();
 		
 	}
 ?>
