@@ -17,9 +17,6 @@ if (!empty($category)) {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    // $sql = "select p.sumPrice, o.dateOfOrder, o.id
-    //     from medicine m, ordertable o, productorder p
-    //     where p.medicineId = m.id and p.orderId = o.id and m.category = '" . $category . "' and o.dateOfOrder > '" . $startingDate . "' and o.dateOfOrder < '" . $endingDate . "' order by o.id ";
     $sql = "SELECT o.id, SUM(p.sumPrice) AS total_price, o.dateOfOrder
         FROM medicine m, ordertable o, productorder p
         WHERE p.medicineId = m.id
