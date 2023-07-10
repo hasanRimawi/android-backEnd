@@ -782,6 +782,86 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "updateEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "ali",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "mallouh",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "passowrd",
+							"value": "newpassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:80/pharmacy/updateEmployee.php",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"updateEmployee.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orderDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:80/pharmacy/orderDetails.php?orderId=10",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"pharmacy",
+						"orderDetails.php"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -9,7 +9,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $sql = "SELECT o.id, SUM(p.sumPrice) AS total_price, o.dateOfOrder, c.firstName, c.lastName
+    $sql = "SELECT o.id, SUM(p.sumPrice) AS total, o.dateOfOrder as orderdate, c.firstName, c.lastName
         FROM medicine m, ordertable o, productorder p, client c
         WHERE  m.id = p.medicineId
           AND p.orderId = o.id
