@@ -28,6 +28,8 @@
 			$response['error'] = false;
 			$response['message'] = "Medicine added successfully!";
 			$response['medicineId'] = $conn->insert_id;
+			$sqlTwo = "insert into stock values (NULL, '" . $conn->insert_id . "', 0)";
+			$conn->query($sqlTwo);
 		} else {
 			$response['error'] = true;
 			$response['message'] = "Error, " . $conn->error;
